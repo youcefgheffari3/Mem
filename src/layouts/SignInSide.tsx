@@ -13,8 +13,10 @@ import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 
+type callback = (b:boolean) => boolean
 interface Props {
-  onConfirm: () => void;
+  onConfirm: (cb:callback) => void;
+  openSignin: boolean;
 }
 
 function Copyright(props: any) {
@@ -37,7 +39,7 @@ function Copyright(props: any) {
 
 const theme = createTheme();
 
-export default function SignInSide({ onConfirm }: Props) {
+export default function SignInSide({ onConfirm,openSignin }: Props) {
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
@@ -114,7 +116,7 @@ export default function SignInSide({ onConfirm }: Props) {
                 label="Remember me"
               />
               <Button
-                onClick={onConfirm}
+                onClick={() => onConfirm(prev => !prev)}
                 type="submit"
                 fullWidth
                 variant="contained"

@@ -1,6 +1,8 @@
+type callback = (b:boolean) => boolean
+
 interface Props {
-  onSignUp: () => void;
-  onSignIN: () => void;
+  onSignUp: (cb:callback) => void;
+  onSignIN: (cb:callback) => void;
 }
 export const Home = ({ onSignUp, onSignIN }: Props) => {
   return (
@@ -56,14 +58,14 @@ export const Home = ({ onSignUp, onSignIN }: Props) => {
             <button
               type="button"
               className="btn btn-outline-primary me-2"
-              onClick={() => onSignIN}
+              onClick={() => onSignIN(prev => !prev)}
             >
               Login
             </button>
             <button
               type="button"
               className="btn btn-primary"
-              onClick={() => onSignUp}
+              onClick={() => onSignUp(prev => !prev)}
             >
               Sign-up
             </button>

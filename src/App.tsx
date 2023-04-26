@@ -1,21 +1,21 @@
 import { useState } from "react";
-import Dashboard from "./Dashboard";
-import SignInSide from "./SignInSide";
-import { Home } from "./Home";
-import SignUp from "./SignUp";
+import Dashboard from "./pages/Dashboard";
+import SignInSide from "./layouts/SignInSide";
+import { Home } from "./pages/Home";
+import SignUp from "./pages/SignUp";
 
 function App() {
-  const [visiblity, setVisibility] = useState(false);
-  const [visib, setVisib] = useState(false);
-  const [visibe, setVisibe] = useState(false);
+  const [isConfirm, setIsConfirm] = useState<boolean>(false);
+  const [openSignup, setOpenSignup] = useState<boolean>(false);
+  const [openSignin, setOpenSignin] = useState<boolean>(false);
 
   return (
-    <>
-      {visib && <SignUp />}
-      {visibe && <SignInSide onConfirm={() => setVisibility(true)} />}
-      {visiblity && <Dashboard />}
-      <Home onSignIN={() => setVisibe(true)} onSignUp={() => setVisib(true)} />
-    </>
+    <div>
+      {openSignup && <SignUp />}
+      {openSignin && <SignInSide onConfirm = {setIsConfirm}  openSignin={isConfirm} />}
+      {isConfirm && <Dashboard />}
+      <Home onSignIN={setOpenSignin}  onSignUp={setOpenSignup} />
+    </div>
   );
 }
 
