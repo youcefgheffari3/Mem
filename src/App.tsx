@@ -10,12 +10,14 @@ function App() {
   const [openSignin, setOpenSignin] = useState<boolean>(false);
 
   return (
-    <div>
-      {openSignup && <SignUp />}
-      {openSignin && <SignInSide onConfirm = {setIsConfirm}  openSignin={isConfirm} />}
+    <>
       {isConfirm && <Dashboard />}
-      <Home onSignIN={setOpenSignin}  onSignUp={setOpenSignup} />
-    </div>
+      {openSignup && <SignUp />}
+      {openSignin && (
+        <SignInSide onConfirm={setIsConfirm} openSignin={isConfirm} />
+      )}
+      <Home onSignIN={setOpenSignin} onSignUp={setOpenSignup} />
+    </>
   );
 }
 
