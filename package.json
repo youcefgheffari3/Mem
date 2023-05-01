@@ -1,7 +1,7 @@
 {
   "name": "mem",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.0.1",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -13,9 +13,12 @@
     "@emotion/styled": "^11.10.8",
     "@mui/icons-material": "^5.11.16",
     "@mui/material": "^5.12.2",
+    "@mui/x-data-grid": "^6.3.0",
     "bootstrap": "^5.2.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-pro-sidebar": "^1.0.0",
+    "react-router-dom": "^6.10.0",
     "recharts": "^2.5.0"
   },
   "devDependencies": {

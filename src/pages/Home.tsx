@@ -1,3 +1,7 @@
+import { Box, IconButton} from '@mui/material';
+import { useContext } from 'react';
+import InputBase from '@mui/material';
+
 type callback = (b:boolean) => boolean
 
 interface Props {
@@ -23,54 +27,26 @@ export const Home = ({ onSignUp, onSignIN }: Props) => {
                 role="img"
                 aria-label="Bootstrap"
               ></svg>
-            </a>
-          </div>
+        </a>
 
-          <ul className="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-            <li>
-              <a href="#" className="nav-link px-2 link-secondary">
-                Home
-              </a>
-            </li>
-            <li>
-              <a href="#" className="nav-link px-2">
-                Features
-              </a>
-            </li>
-            <li>
-              <a href="#" className="nav-link px-2">
-                Pricing
-              </a>
-            </li>
-            <li>
-              <a href="#" className="nav-link px-2">
-                FAQs
-              </a>
-            </li>
-            <li>
-              <a href="#" className="nav-link px-2">
-                About
-              </a>
-            </li>
-          </ul>
+        <ul className="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+          <li><a href="#" className="nav-link px-2 text-secondary">Home</a></li>
+          <li><a href="#" className="nav-link px-2 text-white">Features</a></li>
+          <li><a href="#" className="nav-link px-2 text-white">Pricing</a></li>
+          <li><a href="#" className="nav-link px-2 text-white">FAQs</a></li>
+          <li><a href="#" className="nav-link px-2 text-white">About</a></li>
+        </ul>
 
-          <div className="col-md-3 text-end">
-            <button
-              type="button"
-              className="btn btn-outline-primary me-2"
-              onClick={() => onSignIN(prev => !prev)}
-            >
-              Login
-            </button>
-            <button
-              type="button"
-              className="btn btn-primary"
-              onClick={() => onSignUp(prev => !prev)}
-            >
-              Sign-up
-            </button>
-          </div>
-        </header>
+        <form className="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
+          <input type="search" className="form-control form-control-dark text-bg-dark" placeholder="Search..." aria-label="Search"/>
+        </form>
+
+        <div className="text-end">
+          <button type="button" className="btn btn-outline-light me-2"onClick={() => onSignIN(prev => !prev)} >Login</button>
+          <button type="button" className="btn btn-warning" onClick={() => onSignUp(prev => !prev)}>Sign-up</button>
+        </div>
+      </div>
+  </header>
       </div>
     </>
   );
