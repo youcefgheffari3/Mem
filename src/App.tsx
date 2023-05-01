@@ -6,6 +6,7 @@ import SignUp from "./layouts/SignUp";
 
 import { ColorModeContext, useMode } from "./Theme";
 import { CssBaseline, ThemeProvider} from "@mui/material";
+import Navbar from "./Global/Navbar";
 
 function App() {
   const [theme, colorMode] = useMode()
@@ -15,7 +16,9 @@ function App() {
       <ThemeProvider theme={theme}>
         <CssBaseline/>
         <div className="app">
-          <main className="content"></main>
+          <main className="content">
+            <Navbar/>
+          </main>
         </div>
       </ThemeProvider>
     </ColorModeContext.Provider>
