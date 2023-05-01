@@ -1,6 +1,7 @@
 import { Box, IconButton} from '@mui/material';
 import { useContext } from 'react';
 import InputBase from '@mui/material';
+import Navbar from '@/Global/Navbar';
 
 type callback = (b:boolean) => boolean
 

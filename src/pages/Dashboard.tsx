@@ -17,7 +17,7 @@ import Link from "@mui/material/Link";
 import MenuIcon from "@mui/icons-material/Menu";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import NotificationsIcon from "@mui/icons-material/Notifications";
-import { mainListItems } from "../components/listItems";
+import { mainListItems } from "../components/Sidebar";
 import Orders from "../components/Orders";
 
 type callback = (b: boolean) => boolean;
