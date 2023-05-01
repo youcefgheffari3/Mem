@@ -11,9 +11,7 @@ interface Props {
 export const Home = ({ onSignUp, onSignIN }: Props) => {
   return (
     <>
-      <div className="b-example-divider"></div>
-
-      <div className="container">
+      {/* <div className="container">
         <header className="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
           <div className="col-md-3 mb-2 mb-md-0">
             <a
@@ -47,7 +45,7 @@ export const Home = ({ onSignUp, onSignIN }: Props) => {
         </div>
       </div>
   </header>
-      </div>
+      </div> */}
     </>
   );
 };
